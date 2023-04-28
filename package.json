@@ -1,0 +1,19 @@
+{
+  "name": "jssupport",
+  "version": "1.0.0",
+  "description": "封装nodejs库，算法，无第三方js库依赖",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellycheng/jssupport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jellycheng/jssupport/issues"
+  },
+  "homepage": "https://github.com/jellycheng/jssupport#readme"
+}

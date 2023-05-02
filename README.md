@@ -21,7 +21,8 @@ vi package.json
 
 ## welcome
 ```
-require('jssupport')(''); //welcome to jssupport
+const jssupport = require('jssupport')
+jssupport.hi(''); //welcome to jssupport
 
 ```
 

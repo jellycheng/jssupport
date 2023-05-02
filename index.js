@@ -23,5 +23,5 @@ function hi(str) {
   console.log(str || "welcome to jssupport");
 }
 
-module.exports = walk;
-module.exports = hi;
+module.exports.walk = walk;
+module.exports.hi = hi;

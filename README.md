@@ -108,3 +108,19 @@ console.log(cache.get("userinfo")) //用户信息6
 console.log(cache.get("abc"));//undefined
 
 ```
+
+## 时间方法
+```
+const timeObj = require('jssupport/time');
+console.log(timeObj.getTimeNow()); //时间戳-秒
+console.log(timeObj.getMilliseconds()); //时间戳-毫秒
+
+```
+
+## other
+```
+const pinDir = require('jssupport/f');
+console.log(pinDir.pinPath("abc/demo01")); // 拼接目录
+
+
+```

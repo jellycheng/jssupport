@@ -17,8 +17,13 @@ function formatStr(s, k, v) {
     return s.replace(new RegExp("\\{\\{" + k + "\\}\\}", "g"), v);
 }
 
+function phoneStar(phone) {
+    return phone.replace(/1(\d{2})\d{4}(\d{4})/, '1$1****$2');
+}
+
 module.exports = {
     isNullOrEmpty:isNullOrEmpty,
     trim:trim,
-    formatStr:formatStr
+    formatStr:formatStr,
+    phoneStar:phoneStar
 }

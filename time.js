@@ -9,5 +9,18 @@ function getTimeMilliseconds() {
   return Date.now();
 }
 
-module.exports.getTimeNow = getTimeNow
-module.exports.getMilliseconds = getTimeMilliseconds
+// 睡眠，单位秒, await timeObj.sleep(1);
+function sleep(s) {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          resolve('sleep for ' + s + ' s');
+      }, s*1000);
+  });
+}
+
+
+module.exports = {
+  getTimeNow:getTimeNow,
+  getMilliseconds:getTimeMilliseconds,
+  sleep:sleep
+}

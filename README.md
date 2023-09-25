@@ -65,20 +65,34 @@ vi .env
 
 ## app使用示例1
 ```
-const application = require('jssupport/app');
+app生命周期：
+  1、获取app对象：执行app方法并传入全局配置
+    app = application({}); 或者 app = application("hello全局配置");
+  2、初始化：
+    添加中间件 app.use()
 
+  3、开始执行： await app.run() 
+    执行初始化: 中间件-》插件-》上下文
+    触发 ready 事件钩子
+  4、收到信号-释放资源: 上下文-》onClose事件钩子
+
+const application = require('jssupport/app');
+// 执行app方法
 app = application("hello全局配置");
+// 添加中间件
 app.use(require('jssupport/plugin/demo01'), "传给demo01插件的参数");
 
+// 添加中间件
 app.use(
   async () => {
-    // 初始化 todo
-    console.log(app.demo01)
-    console.log(app.globalCfg);
+    // 当前中间件-初始化
+    console.log(app.demo01) // 获取中间件注入的静态对象
+    console.log(app.globalCfg); // 获取全局对象
+    // 添加gracefullyShutdown事件钩子
     app.onGracefullyShutdown(async (sig) => {
-        console.log("触发信号：", sig);
+        console.log("捕获退出信号，触发gracefullyShutdown事件：", sig);
     });
-
+    // 添加ready事件钩子
     app.addHook('ready', async () => {
       console.log("这里编写业务逻辑");
     });

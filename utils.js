@@ -21,9 +21,16 @@ function phoneStar(phone) {
     return phone.replace(/1(\d{2})\d{4}(\d{4})/, '1$1****$2');
 }
 
+function awaitExit(s) {
+    setTimeout(() => {
+        process.exit(1);
+    }, s*1000);
+}
+
 module.exports = {
     isNullOrEmpty:isNullOrEmpty,
     trim:trim,
     formatStr:formatStr,
-    phoneStar:phoneStar
+    phoneStar:phoneStar,
+    awaitExit:awaitExit
 }

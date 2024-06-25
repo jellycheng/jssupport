@@ -23,5 +23,14 @@ function hi(str) {
   console.log(str || "welcome to jssupport");
 }
 
-module.exports.walk = walk;
-module.exports.hi = hi;
+function isUndefined(value) {
+  return value === undefined;
+}
+
+//module.exports.walk = walk;
+//module.exports.hi = hi;
+module.exports = {
+  walk,
+  hi,
+  isUndefined
+};
